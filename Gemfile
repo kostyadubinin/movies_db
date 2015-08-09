@@ -10,6 +10,10 @@ gem "rails", "4.2.3"
 gem "sass-rails"
 gem "uglifier", ">= 1.3.0"
 
+group :staging, :production do
+  gem "rails_12factor"
+end
+
 group :development, :test do
   gem "byebug"
 end
