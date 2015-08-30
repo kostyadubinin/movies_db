@@ -3,6 +3,7 @@ source "https://rubygems.org"
 ruby "2.2.3"
 
 gem "coffee-rails"
+gem "httparty"
 gem "jquery-rails"
 gem "pg"
 gem "puma"
