@@ -21,6 +21,8 @@ group :development, :test do
 end
 
 group :development do
+  gem "pry"
+  gem "pry-doc"
   gem "pry-rails"
   gem "awesome_print"
 end
