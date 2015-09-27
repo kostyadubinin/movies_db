@@ -8,9 +8,9 @@ module TMDB
       new(id).find
     end
 
-    def self.top_rated
-      movies_attrs = get("/movie/top_rated")["results"]
-      movies_attrs.map { |movie_attrs| new(movie_attrs["id"]).find }
+    def self.popular(page: 1)
+      results = get("/movie/popular", query: { page: page })["results"]
+      results.map { |result| result.deep_symbolize_keys }
     end
 
     def find
