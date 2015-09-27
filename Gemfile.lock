@@ -37,6 +37,7 @@ GEM
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
     arel (6.0.2)
+    attr_extras (4.4.0)
     awesome_print (1.6.1)
     builder (3.2.2)
     byebug (5.0.0)
@@ -150,6 +151,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  attr_extras
   awesome_print
   byebug
   coffee-rails

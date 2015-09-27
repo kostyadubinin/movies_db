@@ -2,6 +2,7 @@ source "https://rubygems.org"
 
 ruby "2.2.3"
 
+gem "attr_extras"
 gem "coffee-rails"
 gem "httparty"
 gem "jquery-rails"

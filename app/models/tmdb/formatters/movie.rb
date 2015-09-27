@@ -1,10 +1,8 @@
 class TMDB::Formatters::Movie
-  def self.prepare(attrs)
-    new(attrs).prepare
-  end
+  pattr_initialize :movie_attrs
 
-  def initialize(attrs)
-    @attrs = attrs.deep_symbolize_keys
+  def self.prepare(movie_attrs)
+    new(movie_attrs).prepare
   end
 
   def prepare
@@ -18,5 +16,7 @@ class TMDB::Formatters::Movie
 
   private
 
-  attr_reader :attrs
+  def attrs
+    @attrs ||= movie_attrs.deep_symbolize_keys
+  end
 end
