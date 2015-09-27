@@ -1,4 +1,4 @@
-class MovieAttributesPreparer
+class TMDB::Formatters::Movie
   def self.prepare(attrs)
     new(attrs).prepare
   end

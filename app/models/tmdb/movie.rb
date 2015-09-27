@@ -1,9 +1,23 @@
 module TMDB
   class Movie < Base
-    APPEND_TO_RESPONSE = "credits,videos,similar".freeze
+    DEFAULTS = "credits,videos,similar".freeze
 
     def self.find(id)
-      get("/movie/#{id}", query: { append_to_response: APPEND_TO_RESPONSE })
+      new(id).find
     end
+
+    def initialize(id)
+      @id = id
+    end
+
+    def find
+      path = "/movie/#{id}"
+      response = self.class.get(path, query: { append_to_response: DEFAULTS })
+      Formatters::Movie.prepare(response)
+    end
+
+    private
+
+    attr_reader :id
   end
 end
