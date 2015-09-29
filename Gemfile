@@ -8,7 +8,7 @@ gem "httparty"
 gem "jquery-rails"
 gem "pg"
 gem "puma"
-gem "rails", "4.2.3"
+gem "rails", "4.2.4"
 gem "sass-rails"
 gem "uglifier", ">= 1.3.0"
 
