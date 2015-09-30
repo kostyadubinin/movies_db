@@ -8,8 +8,8 @@ class TMDB::Formatters::Movie
                                  :vote_count)
 
     prepared_attrs[:budget]  = zero_to_nil(prepared_attrs[:budget])
-    prepared_attrs[:revenue] = zero_to_nil(prepared_attrs[:budget])
-    prepared_attrs[:runtime] = zero_to_nil(prepared_attrs[:budget])
+    prepared_attrs[:revenue] = zero_to_nil(prepared_attrs[:revenue])
+    prepared_attrs[:runtime] = zero_to_nil(prepared_attrs[:runtime])
     prepared_attrs.merge(tmdb_id: attrs[:id])
   end
 
