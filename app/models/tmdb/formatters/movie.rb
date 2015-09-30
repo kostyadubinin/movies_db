@@ -1,9 +1,5 @@
 class TMDB::Formatters::Movie
-  pattr_initialize :movie_attrs
-
-  def self.prepare(movie_attrs)
-    new(movie_attrs).prepare
-  end
+  static_facade :prepare, :movie_attrs
 
   def prepare
     prepared_attrs = attrs.slice(:budget, :imdb_id, :overview, :popularity,

@@ -2,11 +2,7 @@ module TMDB
   class Movie < Base
     DEFAULTS = "credits,videos,similar".freeze
 
-    pattr_initialize :id
-
-    def self.find(id)
-      new(id).find
-    end
+    static_facade :find, :id
 
     def self.popular(page: 1)
       results = get("/movie/popular", query: { page: page })["results"]
