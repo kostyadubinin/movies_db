@@ -6,6 +6,7 @@ class MovieImporter
     movie.assign_attributes(attributes)
 
     log_errors(movie) unless movie.save
+    movie
   end
 
   private
