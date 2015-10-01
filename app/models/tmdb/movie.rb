@@ -5,8 +5,8 @@ module TMDB
     static_facade :find, :id
 
     def self.popular(page: 1)
-      results = get("/movie/popular", query: { page: page })["results"]
-      results.map { |result| result.deep_symbolize_keys }
+      movies_attrs = get("/movie/popular", query: { page: page })["results"]
+      movies_attrs.map { |movie_attrs| find(movie_attrs["id"]) }
     end
 
     def find

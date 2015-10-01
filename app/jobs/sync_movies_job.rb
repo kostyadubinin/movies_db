@@ -7,7 +7,7 @@ class SyncMoviesJob < ActiveJob::Base
       movies_attrs = TMDB::Movie.popular(page: page)
 
       movies_attrs.each do |movie_attrs|
-        TMDB::MovieImporter.import(movie_attrs[:id])
+        MovieImporter.import(movie_attrs)
       end
     end
   end
