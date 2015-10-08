@@ -5,8 +5,13 @@ module TMDB
     static_facade :find, :id
 
     def self.popular(page: 1)
-      movies_attrs = get("/movie/popular", query: { page: page })["results"]
-      movies_attrs.map { |movie_attrs| find(movie_attrs["id"]) }
+      response = get("/movie/popular", query: { page: page })
+
+      response["results"].map do |basic_movie_attrs|
+        full_movie_attrs = find(basic_movie_attrs["id"])
+        yield(full_movie_attrs) if block_given?
+        full_movie_attrs
+      end
     end
 
     def find
