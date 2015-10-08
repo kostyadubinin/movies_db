@@ -4,6 +4,7 @@ ruby "2.2.3"
 
 gem "attr_extras"
 gem "coffee-rails"
+gem "haml-rails"
 gem "httparty"
 gem "jquery-rails"
 gem "pg"
