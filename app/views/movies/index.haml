@@ -1,3 +1,5 @@
-.row
-  .col-xs-12
-    %h1 Hello World!
+.row.top-buffer
+  - present(@movies).each do |movie|
+    .col-xs-4.col-md-3.col-lg-2
+      %a.thumbnail
+        = image_tag movie.poster_url, alt: movie.title
