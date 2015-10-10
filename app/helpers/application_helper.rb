@@ -10,4 +10,11 @@ module ApplicationHelper
       presenter
     end
   end
+
+  def responsive_columns_fix(index, columns_spec)
+    tiers = columns_spec.map { |tier, width| index % width == 0 ? tier : nil }
+    tiers = tiers.compact.map { |tier| "visible-#{tier}-block" }
+
+    content_tag(:div, nil, class: "clearfix #{tiers.join(' ')}") if tiers.any?
+  end
 end
