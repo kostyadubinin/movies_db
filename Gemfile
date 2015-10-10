@@ -13,6 +13,7 @@ gem "rails", "4.2.4"
 gem "sass-rails"
 gem "uglifier", ">= 1.3.0"
 gem 'bootstrap-sass'
+gem 'kaminari'
 
 group :staging, :production do
   gem "rails_12factor"
