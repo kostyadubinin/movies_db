@@ -6,4 +6,5 @@ class Movie < ActiveRecord::Base
   validates :imdb_id, uniqueness: true, allow_nil: true
   validates :popularity, :vote_average, numericality: true
   validates :vote_count, numericality: { only_integer: true }
+  validates :poster_path, presence: true
 end
