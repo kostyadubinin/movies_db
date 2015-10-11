@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150927163213) do
+ActiveRecord::Schema.define(version: 20151011171754) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,14 +24,20 @@ ActiveRecord::Schema.define(version: 20150927163213) do
     t.float    "popularity"
     t.string   "poster_path"
     t.datetime "release_date"
-    t.integer  "revenue",      limit: 8
+    t.integer  "revenue",           limit: 8
     t.integer  "runtime"
     t.string   "tagline"
     t.string   "title"
     t.float    "vote_average"
     t.integer  "vote_count"
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.datetime "created_at",                                  null: false
+    t.datetime "updated_at",                                  null: false
+    t.boolean  "adult",                       default: false, null: false
+    t.string   "backdrop_path"
+    t.string   "homepage"
+    t.string   "original_language"
+    t.string   "original_title"
+    t.string   "status"
   end
 
 end
