@@ -3,7 +3,7 @@ class SyncMoviesJob < ActiveJob::Base
 
   def perform(amount: 1000)
     TMDB::Movie.find_each(:popular, amount: amount) do |movie_attrs|
-      MovieImporter.import(movie_attrs)
+      MovieCreator.(movie_attrs)
     end
   end
 end
