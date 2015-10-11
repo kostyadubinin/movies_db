@@ -14,7 +14,7 @@ module TMDB
 
     def find
       response = self.class.get("/movie/#{id}")
-      Formatter.(response, zero_to_nil: [:budget, :revenue, :timeline])
+      Normalizer.(response, zero_to_nil: [:budget, :revenue, :timeline])
     end
   end
 end

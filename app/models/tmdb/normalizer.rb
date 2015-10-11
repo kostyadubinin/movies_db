@@ -1,4 +1,4 @@
-class TMDB::Formatter
+class TMDB::Normalizer
   attr_private :attributes, :zero_to_nil
 
   def self.call(*params)
