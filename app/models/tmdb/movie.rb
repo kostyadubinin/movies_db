@@ -1,7 +1,5 @@
 module TMDB
   class Movie < Base
-    DEFAULTS = "credits,videos,similar".freeze
-
     static_facade :find, :id
 
     def self.popular(page: 1)
@@ -15,8 +13,7 @@ module TMDB
     end
 
     def find
-      path = "/movie/#{id}"
-      response = self.class.get(path, query: { append_to_response: DEFAULTS })
+      response = self.class.get("/movie/#{id}")
       Formatter.(response, zero_to_nil: [:budget, :revenue, :timeline])
     end
   end
