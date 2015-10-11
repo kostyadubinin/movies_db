@@ -17,7 +17,7 @@ module TMDB
     def find
       path = "/movie/#{id}"
       response = self.class.get(path, query: { append_to_response: DEFAULTS })
-      Formatters::Movie.prepare(response)
+      Formatter.(response, zero_to_nil: [:budget, :revenue, :timeline])
     end
   end
 end
