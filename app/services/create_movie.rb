@@ -1,4 +1,4 @@
-class MovieCreator < BaseCreator
+class CreateMovie < BaseCreator
   private
 
   def scope
