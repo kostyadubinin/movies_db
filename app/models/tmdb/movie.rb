@@ -6,9 +6,9 @@ module TMDB
       response = get("/movie/popular", query: { page: page })
 
       response["results"].map do |basic_movie_attrs|
-        full_movie_attrs = find(basic_movie_attrs["id"])
-        yield(full_movie_attrs) if block_given?
-        full_movie_attrs
+        find(basic_movie_attrs["id"]).tap do |full_movie_attrs|
+          yield(full_movie_attrs) if block_given?
+        end
       end
     end
 

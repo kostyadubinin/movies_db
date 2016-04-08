@@ -1,4 +1,5 @@
 = paginator.render do
-  %ul.pagination
-    = prev_page_tag unless current_page.first?
-    = next_page_tag unless current_page.last?
+  %nav
+    %ul.pager
+      = prev_page_tag unless current_page.first?
+      = next_page_tag unless current_page.last?

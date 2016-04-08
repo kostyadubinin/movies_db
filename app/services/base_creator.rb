@@ -4,9 +4,9 @@ class BaseCreator
   attr_implement :scope
 
   def call
-    object = scope.find_or_initialize_by(tmdb_id: attributes[:tmdb_id])
-    object.assign_attributes(attributes.slice(*permitted_attributes))
-    object.save
-    object
+    scope.find_or_initialize_by(tmdb_id: attributes[:tmdb_id]).tap do |object|
+      object.assign_attributes(attributes.slice(*permitted_attributes))
+      object.save
+    end
   end
 end
