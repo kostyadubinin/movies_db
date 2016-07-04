@@ -12,7 +12,7 @@ gem "jquery-rails"
 gem "kaminari"
 gem "pg"
 gem "puma"
-gem "rails", "4.2.4"
+gem "rails", "4.2.6"
 gem "rails-assets-tether"
 gem "sass-rails"
 gem "uglifier", ">= 1.3.0"
@@ -27,6 +27,7 @@ group :development, :test do
 end
 
 group :development do
+  gem "bundler-audit"
   gem "pry"
   gem "pry-doc"
   gem "pry-rails"
